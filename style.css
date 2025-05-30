@@ -66,7 +66,7 @@ p {
   background-color: white;
   padding: 1.5rem 1.5rem 0.5rem;
   border-radius: 0.5rem;
-  box-shadow: 0 16px 32px hsla(var(--dark-purple), 0.1);
+  box-shadow: 0 1rem 2rem hsla(var(--dark-purple), 0.1);
 }
 
 details:not(:first-of-type) {
@@ -77,16 +77,16 @@ details:last-child summary {
   border: 0;
 }
 
-details[open] .icon {
-  background-image: url(./images/icon-minus.svg);
-  transition: 200ms ease-in-out;
-}
-
 .icon {
   background-image: url(./images/icon-plus.svg);
   width: 30px;
   height: 31px;
   flex-shrink: 0;
+}
+
+details[open] .icon {
+  background-image: url(./images/icon-minus.svg);
+  transition: 200ms ease-in-out;
 }
 
 summary {
@@ -100,7 +100,7 @@ summary:hover {
   color: var(--magenta);
 }
 
-@media (min-width: 376px) {
+@media (min-width: 23.5rem) {
   body {
     background-image: url(./images/background-pattern-desktop.svg);
   }
@@ -134,5 +134,11 @@ summary:hover {
 @media (min-width: 1440px) {
   body {
     background-size: 100vw;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  details[open] .icon {
+    transition: none;
   }
 }
