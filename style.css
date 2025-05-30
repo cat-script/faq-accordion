@@ -1,0 +1,138 @@
+@font-face {
+  font-family: "Work Sans";
+  src: url(./fonts/WorkSans-VariableFont_wght.ttf) format("truetype");
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --light-pink: hsl(275, 100%, 97%);
+  --gray-purple-hsl: hsl(292, 16%, 49%);
+  --gray-purple: 292, 16%, 49%;
+  --dark-purple-hsl: hsl(292, 42%, 14%);
+  --dark-purple: 292, 42%, 14%;
+  --magenta: hsl(281, 83%, 54%);
+  --ff: "Work Sans", sans-serif;
+  --fw-400: 400;
+  --fw-600: 600;
+  --fw-700: 700;
+}
+
+body {
+  min-height: 100vh;
+  padding: 1.5rem;
+  font-weight: var(--fw-400);
+  font-family: var(--ff);
+  color: var(--dark-purple-hsl);
+  background-color: var(--light-pink);
+  background-image: url(./images/background-pattern-mobile.svg);
+  background-position: top center;
+  background-repeat: no-repeat;
+  display: grid;
+  place-content: center;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.title {
+  font-size: 1.3125rem;
+  margin-block-end: 0.5rem;
+}
+
+.star {
+  width: 1.5rem;
+}
+
+p {
+  font-size: 0.875rem;
+  color: var(--gray-purple-hsl);
+  line-height: 1.5;
+  margin-block: 0.25em 1.5em;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: minmax(86%, 32.5rem);
+  background-color: white;
+  padding: 1.5rem 1.5rem 0.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 16px 32px hsla(var(--dark-purple), 0.1);
+}
+
+details:not(:first-of-type) {
+  border-top: 2px solid hsl(var(--dark-purple), 0.05);
+}
+
+details:last-child summary {
+  border: 0;
+}
+
+details[open] .icon {
+  background-image: url(./images/icon-minus.svg);
+  transition: 200ms ease-in-out;
+}
+
+.icon {
+  background-image: url(./images/icon-plus.svg);
+  width: 30px;
+  height: 31px;
+  flex-shrink: 0;
+}
+
+summary {
+  justify-content: space-between;
+  font-weight: var(--fw-700);
+  cursor: pointer;
+  padding-block: 1.2em;
+}
+
+summary:hover {
+  color: var(--magenta);
+}
+
+@media (min-width: 376px) {
+  body {
+    background-image: url(./images/background-pattern-desktop.svg);
+  }
+}
+
+@media (min-width: 600px) {
+  .container {
+    padding: 2.5rem 2.5rem 1rem;
+    border-radius: 1rem;
+  }
+
+  .title {
+    font-size: 2.375rem;
+  }
+
+  .star {
+    width: 2.375rem;
+  }
+
+  summary {
+    font-size: 1.125rem;
+    padding-block: 1.3em;
+  }
+
+  p {
+    font-size: 1rem;
+    margin-block: 0 1.5rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  body {
+    background-size: 100vw;
+  }
+}
